@@ -23,22 +23,32 @@
             }
 
             // grab the latitude from your array at index 0
+            var latA = cells[0];
             // grab the longitude from your array at index 1
+            var lonA = cells[1];
             // grab the name from your array at index 2
+            var name = cells[2];
 
-            // Your going to need to parse your string as a `double`
+            // Youre going to need to parse your string as a `double`
             // which is similar to parsing a string as an `int`
+            var dLatitude = double.Parse(latA);
+            var dLongitude = double.Parse(lonA);
+
+            var tacoPoint = new Point();
+            tacoPoint.Latitude = dLatitude;
+            tacoPoint.Longitude = dLongitude;
 
             // You'll need to create a TacoBell class
             // that conforms to ITrackable
 
             // Then, you'll need an instance of the TacoBell class
             // With the name and point set correctly
+            var bell = new TacoBell(name, tacoPoint);
 
             // Then, return the instance of your TacoBell class
             // Since it conforms to ITrackable
 
-            return null;
+            return bell;
         }
     }
 }
